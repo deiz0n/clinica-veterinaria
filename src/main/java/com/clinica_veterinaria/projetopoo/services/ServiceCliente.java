@@ -24,7 +24,7 @@ public class ServiceCliente {
         return repository.findAll();
     }
 
-    // Método responsável por realizar a busca de cliente por id
+    // Método responsável por realizar a busca do cliente por id
     public Cliente findById(Long id) {
         Optional<Cliente> cliente = repository.findById(id);
         return cliente.orElseThrow(() -> new ResourceNotFoundException(id));
