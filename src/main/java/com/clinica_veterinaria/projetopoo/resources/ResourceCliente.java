@@ -53,5 +53,4 @@ public class ResourceCliente {
         cliente = service.update(id, cliente);
         return ResponseEntity.ok().body(cliente);
     }
-
 }

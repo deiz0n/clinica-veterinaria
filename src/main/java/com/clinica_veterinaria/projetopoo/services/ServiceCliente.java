@@ -59,6 +59,7 @@ public class ServiceCliente {
 
     // Método responsável por disponibilizar quais os dados do cliente serão atualizados
     private void updateData(Cliente obj, Cliente cliente) {
+        obj.setCpf(cliente.getCpf());
         obj.setNome(cliente.getNome());
         obj.setEmail(cliente.getEmail());
         obj.setEndereco(cliente.getEndereco());
