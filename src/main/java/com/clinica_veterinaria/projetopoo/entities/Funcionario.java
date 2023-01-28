@@ -1,9 +1,6 @@
 package com.clinica_veterinaria.projetopoo.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -22,6 +19,9 @@ public class Funcionario implements Serializable {
     private Double salario;
     private String telefone;
     private String endereco;
+
+    @OneToOne(mappedBy = "funcionario")
+    private Agendamento agendamento;
 
     public Funcionario() {
 
@@ -100,6 +100,14 @@ public class Funcionario implements Serializable {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public Agendamento getAgendamento() {
+        return agendamento;
+    }
+
+    public void setAgendamento(Agendamento agendamento) {
+        this.agendamento = agendamento;
     }
 
     @Override

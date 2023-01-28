@@ -17,6 +17,7 @@ public class Produto implements Serializable {
     private String nome;
     private Double preco;
 
+
     public Produto() {
 
     }
@@ -50,6 +51,7 @@ public class Produto implements Serializable {
     public void setPreco(Double preco) {
         this.preco = preco;
     }
+
 
     @Override
     public boolean equals(Object o) {

@@ -1,9 +1,6 @@
 package com.clinica_veterinaria.projetopoo.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -21,6 +18,9 @@ public class Animal implements Serializable {
     private String especie;
     private Character sexo;
     private String cor;
+
+    @OneToOne(mappedBy = "animal")
+    private Agendamento agendamento;
 
     public Animal() {
 
@@ -90,6 +90,14 @@ public class Animal implements Serializable {
 
     public void setCor(String cor) {
         this.cor = cor;
+    }
+
+    public Agendamento getAgendamento() {
+        return agendamento;
+    }
+
+    public void setAgendamento(Agendamento agendamento) {
+        this.agendamento = agendamento;
     }
 
     @Override

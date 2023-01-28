@@ -92,6 +92,7 @@ public class Cliente implements Serializable {
         this.endereco = endereco;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
