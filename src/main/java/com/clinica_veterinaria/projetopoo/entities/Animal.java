@@ -22,6 +22,9 @@ public class Animal implements Serializable {
     @OneToOne(mappedBy = "animal")
     private Agendamento agendamento;
 
+    @OneToOne(mappedBy = "animal")
+    private AnimalCliente animalCliente;
+
     public Animal() {
 
     }
@@ -98,6 +101,14 @@ public class Animal implements Serializable {
 
     public void setAgendamento(Agendamento agendamento) {
         this.agendamento = agendamento;
+    }
+
+    public AnimalCliente getAnimalCliente() {
+        return animalCliente;
+    }
+
+    public void setAnimalCliente(AnimalCliente animalCliente) {
+        this.animalCliente = animalCliente;
     }
 
     @Override

@@ -1,9 +1,6 @@
 package com.clinica_veterinaria.projetopoo.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -21,6 +18,9 @@ public class Cliente implements Serializable {
     private String email;
     private String telefone;
     private String endereco;
+
+    @OneToOne(mappedBy = "cliente")
+    private AnimalCliente animalCliente;
 
     public Cliente() {
 

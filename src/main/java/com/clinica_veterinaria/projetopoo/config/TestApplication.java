@@ -32,6 +32,9 @@ public class TestApplication implements CommandLineRunner {
     @Autowired
     private RepositoryAgendamento repositoryAgendamento;
 
+    @Autowired
+    private RepositoryAnimalCliente repositoryAnimalCliente;
+
     SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
     @Override
@@ -54,6 +57,13 @@ public class TestApplication implements CommandLineRunner {
         repositoryAnimal.saveAll(Arrays.asList(animal1, animal2));
         repositoryProduto.save(product);
         repositoryServico.save(service);
+
+        AnimalCliente animalCliente = new AnimalCliente(null);
+
+        animalCliente.setCliente(client1);
+        animalCliente.setAnimal(animal1);
+
+        repositoryAnimalCliente.save(animalCliente);
 
         Agendamento agen = new Agendamento(null, format.parse("18/05/2018"), "Realizado");
 
